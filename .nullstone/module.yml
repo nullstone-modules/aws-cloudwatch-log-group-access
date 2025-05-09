@@ -1,0 +1,16 @@
+org_name: nullstone
+name: aws-cloudwatch-log-group-access
+friendly_name: Cloudwatch Log Group Access
+description: Enables an application to read and write to a Cloudwatch log group
+category: capability
+subcategory: datastores
+provider_types:
+    - aws
+platform: cloudwatch
+subplatform: ""
+type: ""
+appCategories:
+    - container
+    - serverless
+    - server
+is_public: true
