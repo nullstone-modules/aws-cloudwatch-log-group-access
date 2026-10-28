@@ -7,12 +7,13 @@ resource "aws_iam_policy" "log_admin" {
   policy = data.aws_iam_policy_document.log_admin.json
 }
 
+// Log Group actions require the Log Group ARN as of 2027-04-26; the ":*" form only covers Log Stream actions.
 data "aws_iam_policy_document" "log_admin" {
   statement {
     sid       = "AllowAllLogs"
     effect    = "Allow"
     actions   = ["logs:*"]
-    resources = ["${local.log_group_arn}:*"]
+    resources = [local.log_group_arn, "${local.log_group_arn}:*"]
   }
 }
 
